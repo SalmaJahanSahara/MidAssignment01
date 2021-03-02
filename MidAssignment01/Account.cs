@@ -52,7 +52,7 @@ namespace Assignment_1
         public void Transfer(double amount, Account receiver)
         {
             this.balance = this.balance - amount;
-            a.balance = a.balance + amount;
+            //a.balance = a.balance + amount;
             //receiver = balance + amount;
         }
 
@@ -61,7 +61,7 @@ namespace Assignment_1
         {
             //Console.WriteLine("Account Number: " + this.accountNumber + "\nAccount Name: " + this.accountName + "\nBalance: " + this.balance);
             Console.WriteLine("Account No:{0}\nAccount Name:{1}\nBalance:{2}", this.accountNumber, this.accountName, this.balance);
-            this.address.GetAddress();
+            this.address.GetAddress(); // obj ref of add
         }
 
     }

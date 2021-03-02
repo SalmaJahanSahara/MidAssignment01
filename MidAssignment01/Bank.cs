@@ -9,12 +9,12 @@ namespace Assignment_1
     class Bank
     {
         private string bankName;
-        private Account[] accounts;
+        private Account[] myBank;
 
         public Bank(string name, int size)
         {
             this.bankName = name;
-            accounts = new Account[size];
+            myBank = new Account[size];
         }
 
         public string Name
@@ -24,43 +24,43 @@ namespace Assignment_1
         }
         public Account[] Accounts //returning the array
         {
-            set { this.accounts = value; }
-            get { return this.accounts; }
+            set { this.myBank = value; }
+            get { return this.myBank; }
         }
         public void PrintAccountDetails()
         {
-            for(int i = 0; i < accounts.Length; i++)
+            for(int i = 0; i < myBank.Length; i++)
             {
-                if (accounts[i] == null)
+                if (myBank[i] == null)
                 {
                     continue;
                 }
-                accounts[i].ShowAccountInformation();
+                myBank[i].ShowAccountInformation();
             }
         }
         public void AddAccount(Account account)
         {
-            for (int i = 0; i < accounts.Length; i++)
+            for (int i = 0; i < myBank.Length; i++)
             {
-                if (accounts[i] == null)
+                if (myBank[i] == null)
                 {
-                    accounts[i] = account;
+                    myBank[i] = account;
                     break;
                 }
             }
         }
-        public void RemoveAccount(int accountNumber)
+        public void DeleteAccount(int accountNumber)
         {
             int flag =0;
-            for (int i = 0; i < accounts.Length; i++)
+            for (int i = 0; i < myBank.Length; i++)
             {
-                if (accounts[i] == null)
+                if (myBank[i] == null)
                 {
                     continue;
                 }
-                else if(accounts[i].AccountNumber == accountNumber)
+                else if(myBank[i].AccountNumber == accountNumber)
                 {
-                    accounts[i].ShowAccountInformation();
+                    myBank[i].ShowAccountInformation();
                     flag = 0;
                     break;
                 }
@@ -73,6 +73,10 @@ namespace Assignment_1
             }
             if (flag == 1)
                 Console.WriteLine("Account Not Found");
+        }
+        public void Transaction()
+        {
+
         }
     }
 }
